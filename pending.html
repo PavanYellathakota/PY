@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+        }
+        .message {
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            color: #2d3748;
+            animation: fadeIn 2s ease-in;
+        }
+        .status {
+            color: #4a5568;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .gear {
+            animation: spin 4s linear infinite;
+            transform-origin: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <svg width="200" height="200" viewBox="0 0 200 200">
+            <!-- Main gear -->
+            <g class="gear">
+                <circle cx="100" cy="100" r="80" fill="#4299e1" opacity="0.2"/>
+                <path d="M100 40
+                         L110 10 L90 10 Z
+                         M160 100
+                         L190 110 L190 90 Z
+                         M100 160
+                         L90 190 L110 190 Z
+                         M40 100
+                         L10 90 L10 110 Z" 
+                      fill="#4299e1"/>
+                <circle cx="100" cy="100" r="60" fill="#4299e1" opacity="0.3"/>
+                <circle cx="100" cy="100" r="40" fill="#4299e1"/>
+            </g>
+            <!-- Small dots representing work in progress -->
+            <circle cx="160" cy="100" r="5" fill="#2b6cb0">
+                <animate attributeName="opacity" 
+                         values="0;1;0" dur="1.5s" 
+                         repeatCount="indefinite"/>
+            </circle>
+            <circle cx="180" cy="100" r="5" fill="#2b6cb0">
+                <animate attributeName="opacity" 
+                         values="0;1;0" dur="1.5s" 
+                         begin="0.5s"
+                         repeatCount="indefinite"/>
+            </circle>
+            <circle cx="200" cy="100" r="5" fill="#2b6cb0">
+                <animate attributeName="opacity" 
+                         values="0;1;0" dur="1.5s"
+                         begin="1s" 
+                         repeatCount="indefinite"/>
+            </circle>
+        </svg>
+        <div class="message">Currently Working On It</div>
+        <div class="status">Updating Soon...</div>
+    </div>
+</body>
+</html>
