@@ -989,14 +989,14 @@
           <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="300">
             <i class="bi bi-telephone flex-shrink-0 me-3"></i>
             <p class="mb-0">
-              <a href="#" id="phone-placeholder" class="contact-placeholder text-decoration-none">Quick Call</a>
+              <a href="tel:+19292784589" id="phone-placeholder" class="contact-placeholder text-decoration-none">Quick Call</a>
             </p>
           </div>
         
           <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
             <i class="bi bi-envelope flex-shrink-0 me-3"></i>
             <p class="mb-0">
-              <a href="#" id="email-placeholder" class="contact-placeholder text-decoration-none">Mail me</a>
+              <a href="mailto:pavanyellathakota@gmail.com" id="email-placeholder" class="contact-placeholder text-decoration-none">Mail me</a>
             </p>
           </div>
         
@@ -1010,7 +1010,7 @@
         </div>
         
         <script>
-        const contactInfo = {
+        const sectionContactInfo = {
           phone: '+19292784589',
           email: 'pavanyellathakota@gmail.com',
           address: 'New York City, NY, USA'
@@ -1018,21 +1018,12 @@
 
         
         document.getElementById('address-placeholder').addEventListener('click', function() {
-          const addressUrl = `https://www.google.com/maps?q=${encodeURIComponent(contactInfo.address)}`;
+          const addressUrl = `https://www.google.com/maps?q=${encodeURIComponent(sectionContactInfo.address)}`;
           window.open(addressUrl, '_blank');
-        });
-        
-        document.getElementById('phone-placeholder').addEventListener('click', function(e) {
-          e.preventDefault();
-          window.location.href = `tel:${contactInfo.phone}`;
-        });
-        
-        document.getElementById('email-placeholder').addEventListener('click', function(e) {
-          e.preventDefault();
-          window.location.href = `mailto:${contactInfo.email}`;
         });
         </script>
       </div>
+
 <style>
 .info-item {
   padding: 20px;
