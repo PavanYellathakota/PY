@@ -684,55 +684,206 @@ section,
 /*--------------------------------------------------------------
 # Skills Section
 --------------------------------------------------------------*/
-
-#skills {
-  text-align: center;
-  padding: 50px;
+/* Skills Section */
+.skills.section {
+  padding: 2rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  justify-content: center;
+  gap: 1rem;
 }
 
 .skill-category {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
 }
 
 .skill-category h3 {
-  font-size: 1.2em;
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
 }
 
 .icons {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: 80px;
+  position: relative;
+}
+
+.icons::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(to left, #fff, transparent);
+  z-index: 1;
+}
+
+.icons::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(to right, #fff, transparent);
+  z-index: 1;
+}
+
+.icons:hover .skill {
+  animation-play-state: paused;
 }
 
 .skill {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80px;
+  gap: 0.3rem;
+  flex: 0 0 auto;
+  animation: autoScroll 20s linear infinite;
+}
+
+@keyframes autoScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% - 1rem)); }
 }
 
 .skill img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 
 .skill span {
-  font-size: 0.9em;
-  margin-top: 5px;
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
 }
 
+.misc-skills {
+  margin-top: 2rem;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .skill-category h3 {
+    font-size: 1rem;
+  }
+  .skill img {
+    width: 35px;
+    height: 35px;
+  }
+  .skill span {
+    font-size: 0.75rem;
+  }
+}
+
+/* Resume Section */
+.resume-item {
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.resume-item h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.resume-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resume-item ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.resume-item ul li i {
+  margin-right: 10px;
+  color: #666;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: #0056b3;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #003d82;
+  text-decoration: underline;
+}
+
+/* Portfolio Section */
+.github-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+/* Contact Section */
+.info-item {
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.info-item i {
+  font-size: 20px;
+  color: #333;
+}
+
+.contact-placeholder {
+  color: #333;
+  cursor: pointer;
+}
+
+.contact-placeholder:hover {
+  color: #0056b3;
+}
+
+.google-form-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .google-form-container div {
+    padding-top: 150%;
+  }
+}
+
+@media (min-width: 769px) {
+  .google-form-container div {
+    padding-top: 100%;
+  }
+}
+
+/* Accessibility Focus Styles */
+.portfolio-filters li:focus, .contact
 
 /*--------------------------------------------------------------
 # Resume Section
